@@ -8,7 +8,6 @@ module.exports = (client) => {
         const props = require(`${dir}/${file}`);
 
         client.modules.set(props.help.name, props);
-        console.log(props);
 
     }
     console.log(`${client.modules.size} commands have been loaded`);

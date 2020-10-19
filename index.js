@@ -18,8 +18,9 @@ client.ws.on("VOICE_SERVER_UPDATE", (pk) => console.log(client.music.serverUpdat
 client.ws.on("VOICE_STATE_UPDATE", (pk) => console.log(client.music.stateUpdate(pk)));
 client.login(token);
 client.on("ready",()=>{
-    console.log(`${client.users.size}`);
-    client.user.setActivity("?play");
+    console.log(`${client.users.cache.size} usuarios en total.`);
+    console.log(`${client.guilds.cache.size} servers en total.`);
+    client.user.setActivity(`${client.guilds.cache.size} servers. | ?play`);
 })
 const {prefix} = require("./config");
 

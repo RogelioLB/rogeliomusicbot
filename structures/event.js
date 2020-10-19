@@ -11,7 +11,6 @@ module.exports = (client) => {
         const event = require(`${dir}/${file}`);
         
         client.on(file.split(".").shift(), event.bind(null, client));
-        console.log(event);
     }
     console.log(`${events.length} events loaded`);
 }

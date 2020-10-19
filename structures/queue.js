@@ -25,7 +25,7 @@ module.exports=class Queue{
         }).on("start",async()=>{
             const {title}=await Rest.decode(this.current.song);
 
-            this.message.channel.send(`:musical_note:Playing: **${title}** :musical_note:| Requester: <@${this.current.id}> `);
+            this.message.channel.send(`:musical_note:Reproduciendo: **${title}** :musical_note:| Pedida por: <@${this.current.id}> `);
         })
     }
 
@@ -45,11 +45,6 @@ module.exports=class Queue{
             case "?":
                 default:
                     return await this.destroy();
-
-            case "empty":
-                await this.destroy();
-
-                return this.message.channel.send(`The queue has ran out of songs to play, I'll be leaving now`);
             case "emptyVC":
                 await this.destroy();
 
